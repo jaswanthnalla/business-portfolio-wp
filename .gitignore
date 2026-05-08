@@ -1,0 +1,42 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Claude Code local settings (keep launch.json)
+.claude/settings.local.json
+
+# WordPress runtime (only the theme is part of this repo)
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/backup-db/
+wp-content/blogs.dir/
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+wp-content/db.php
+wp-config.php
+wp-config-sample.php
+
+# Logs
+*.log
+debug.log
+error_log
+
+# Compiled / build artifacts
+*.zip
+*.tar
+*.tar.gz
+node_modules/
+vendor/
+
+# Sensitive
+.env
+.env.*
+!.env.example

@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "wordpress-site",
+      "runtimeExecutable": "C:\\xampp\\php\\php.exe",
+      "runtimeArgs": ["-S", "0.0.0.0:8000", "-t", "preview", "preview/index.php"],
+      "port": 8000
+    }
+  ]
+}
