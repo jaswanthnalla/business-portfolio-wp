@@ -1,96 +1,116 @@
-# Deploying to InfinityFree
+# Deploying to AwardSpace
 
-InfinityFree provides free PHP + MySQL hosting that runs real WordPress, so the entire theme — including the contact form, custom post types, and admin — works exactly as built.
+AwardSpace offers a free hosting tier with PHP, MySQL, and a one-click WordPress installer (Zacky Installer) — perfect for running this theme exactly as built. The contact form, custom post types, and WordPress admin all work because real PHP + MySQL is available.
+
+**Free tier specs (as of writing):**
+
+- 1 GB disk space
+- 5 GB monthly bandwidth
+- 1 MySQL database
+- Up to 3 free subdomains (e.g. `yoursite.atspace.cc`, `yoursite.atwebpages.com`)
+- PHP 7+ / 8+
+- Free File Manager + FTP access
+- No ads on your site
 
 ## 1. Create a free hosting account
 
-1. Go to <https://www.infinityfree.com/> and sign up (no credit card)
-2. From the **Client Area**, click **Create Account**
-3. Pick a free subdomain (e.g. `your-site.infinityfreeapp.com`) or attach a custom domain
-4. Wait ~5 minutes for the account to provision
+1. Go to <https://www.awardspace.com/free-hosting/> → click **Sign Up Free**
+2. Fill in name, email, password
+3. Verify your email (check spam if it's slow)
+4. Log in to the **Hosting Control Panel**
 
-## 2. Install WordPress
+## 2. Create a subdomain
 
-1. From the Client Area → click **Manage** on your account → **Control Panel**
-2. In the control panel, find **Softaculous Apps Installer**
-3. Click **WordPress** → **Install Now**
-4. Fill in:
-   - **Choose Domain**: your InfinityFree subdomain
-   - **In Directory**: leave blank to install at root
-   - **Site Name** / **Site Description**: anything (you can change later)
+1. Control Panel → **Domain Manager** (or **Hosted Domains**)
+2. Click **Add a New Domain or Subdomain**
+3. Pick a free subdomain like `yoursite.atspace.cc`
+4. Save — wait ~1 minute for DNS to propagate
+
+## 3. Install WordPress
+
+1. Control Panel → **Zacky Installer** (sometimes labeled "Free Installer" or "1-Click Apps")
+2. Find **WordPress** → click **Install**
+3. Fill in:
+   - **Domain**: select the subdomain you just created
+   - **Directory**: leave blank (install at root)
+   - **Site Name** / **Tagline**: anything (changeable later)
    - **Admin Username** / **Password**: pick something strong
-   - **Admin Email**: your real email (the contact form sends here)
-5. Click **Install**. Softaculous will set up the database and WordPress core for you.
+   - **Admin Email**: your real email — the contact form sends here
+4. Click **Install**. Zacky will create the database, install WordPress core, and email you a confirmation when done.
 
-## 3. Upload this theme
+## 4. Upload this theme
 
-**Option A — Upload via cPanel File Manager (easiest)**
+A pre-built ZIP is in this repo at the root: **`business-portfolio.zip`** (or download just the theme folder from `wp-content/themes/business-portfolio/` on GitHub).
 
-1. Download a ZIP of just the theme folder from this repo:
-   - In GitHub: navigate to `wp-content/themes/business-portfolio/`
-   - Or clone the repo and zip the folder yourself
-2. In the InfinityFree control panel → **File Manager** (or **Online File Manager**)
-3. Navigate to: `htdocs/wp-content/themes/`
-4. Click **Upload** and upload the `business-portfolio` folder (or the ZIP, then **Extract**)
-5. Make sure the final path is: `htdocs/wp-content/themes/business-portfolio/style.css`
+**Option A — File Manager (easiest)**
 
-**Option B — Upload via FTP**
+1. Control Panel → **File Manager**
+2. Navigate to your subdomain's folder, then into: `public_html/wp-content/themes/`
+3. Click **Upload** → upload `business-portfolio.zip`
+4. Right-click the zip → **Extract** (or use the **Extract** toolbar button)
+5. Verify the path is: `public_html/wp-content/themes/business-portfolio/style.css`
+6. Delete the zip after extraction (saves quota)
 
-1. In the control panel, find your **FTP Details** (host, username, password)
-2. Connect with FileZilla or any FTP client
-3. Upload the entire `business-portfolio` folder to `htdocs/wp-content/themes/`
+**Option B — FTP**
 
-## 4. Activate the theme
+1. Control Panel → **FTP Accounts** → note your FTP host, username, password
+2. Connect with FileZilla:
+   - **Host**: from FTP Accounts page
+   - **Username** / **Password**: same
+   - **Port**: 21
+3. Upload the entire `business-portfolio` folder to `/public_html/wp-content/themes/`
 
-1. Open your WordPress admin: `https://your-site.infinityfreeapp.com/wp-admin/`
-2. Log in with the admin credentials from step 2
-3. Go to **Appearance → Themes**
-4. Hover over **Business Portfolio** → click **Activate**
+## 5. Activate the theme
 
-The theme will automatically:
+1. Open your WordPress admin: `https://yoursite.atspace.cc/wp-admin/`
+2. Log in with the credentials from step 3
+3. **Appearance → Themes** → hover over **Business Portfolio** → **Activate**
 
-- Create the **Home**, **About**, **Services**, **Contact**, and **Blog** pages
-- Assign the correct page templates to each
-- Set Home as the static front page and Blog as the posts page
-- Build a default primary menu with all five pages
-- Flush rewrite rules so pretty URLs work
+The theme automatically:
 
-## 5. Add content
+- Creates **Home**, **About**, **Services**, **Contact**, and **Blog** pages
+- Assigns the correct page templates
+- Sets Home as the static front page, Blog as the posts page
+- Builds a default primary menu
+- Flushes rewrite rules
 
-In the WordPress admin sidebar:
+## 6. Add content
 
-- **Services** → Add the actual services you offer (set the icon emoji in the right sidebar meta box, set Page Order to control display order)
-- **Portfolio** → Add real projects with featured images (assign Project Categories)
-- **Testimonials** → Add client quotes (set author name + role in the meta box)
-- **Team** → Add team members (set role + LinkedIn URL in the meta box)
-- **Posts** → Write blog posts as usual
+- **Services** → wp-admin → Services → Add New (set icon emoji + page order)
+- **Portfolio** → wp-admin → Portfolio → Add New (with featured image + categories)
+- **Testimonials** → wp-admin → Testimonials → Add New (set author + role in meta box)
+- **Team** → wp-admin → Team → Add New (set role + LinkedIn URL)
+- **Posts** → wp-admin → Posts → Add New (regular blog posts)
 
-## 6. Customize
+## 7. Customize
 
-- **Appearance → Customize → Homepage Hero** — change the hero title and subtitle
-- **Appearance → Customize → Contact Information** — set the email/phone/address that show on the Contact page and in the footer
-- **Appearance → Customize → Social Links** — add your Twitter, LinkedIn, etc. URLs
+**Appearance → Customize:**
 
-## 7. Verify the contact form
+- **Homepage Hero** — change the hero title and subtitle
+- **Contact Information** — email, phone, address shown on the Contact page and footer
+- **Social Links** — Twitter, LinkedIn, Facebook, Instagram, GitHub URLs
 
-1. Visit `https://your-site.infinityfreeapp.com/contact/`
-2. Fill out and submit the form
-3. Check the inbox of the admin email you set during install
-4. Also visible in WordPress admin under **Contact Messages** (saved as private posts)
+## 8. Test the contact form
+
+1. Visit `https://yoursite.atspace.cc/contact/`
+2. Submit a test message
+3. Check the inbox of the admin email you set in step 3
+4. Also visible under **Contact Messages** in wp-admin
 
 ## Notes & gotchas
 
-- **InfinityFree has no SSH**, so you can't `git clone` directly into the server — use File Manager or FTP to upload
-- The first request after a long idle period takes a few seconds — that's normal on free hosting
-- Outbound `wp_mail()` works on InfinityFree but can land in spam initially. If delivery is unreliable, install **WP Mail SMTP** plugin and connect a free SMTP service (Brevo, Mailgun, etc.). Note: this would be the only plugin needed; the theme itself is plugin-free.
-- Free accounts have a daily hits limit (~50,000). For real traffic, upgrade or move to a paid host.
+- **AwardSpace puts WordPress files under `public_html/`** (not `htdocs/` like some other hosts). Always use `public_html/wp-content/themes/business-portfolio/`.
+- The free tier has a **5 GB bandwidth cap per month** — fine for early traffic, you'll need to upgrade for serious volume.
+- **`wp_mail()` works on AwardSpace**, but emails sometimes land in spam. If delivery is unreliable, install **WP Mail SMTP** and connect a free SMTP service (Brevo, SendGrid free tier, Mailgun). This would be the only plugin needed; the theme itself is plugin-free.
+- **Sleep after inactivity:** free tier sites may take a few seconds to wake on the first request after a long idle period — that's normal.
+- **PHP version:** make sure it's set to PHP 7.4 or 8.x in **Control Panel → PHP Configuration**. WordPress and this theme don't run on PHP 5.x.
 
-## Alternative: paid WordPress hosts
+## When to upgrade
 
-If you outgrow InfinityFree:
+If you outgrow AwardSpace's free tier:
 
-- **Hostinger** — ~$2–4/mo, beginner-friendly, includes free domain
-- **SiteGround** — solid performance, great support
-- **Kinsta** / **WP Engine** — premium managed WordPress
+- **AwardSpace Basic** (~$3/mo) — same host, no bandwidth cap
+- **Hostinger** (~$2–4/mo, often discounted) — much faster, free domain included
+- **SiteGround** / **Kinsta** / **WP Engine** — premium managed WordPress
 
-The theme works identically on any of them. Just upload to `wp-content/themes/` and activate.
+The theme works identically on any of them — just upload to `wp-content/themes/` and activate.

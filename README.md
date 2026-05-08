@@ -57,9 +57,9 @@ wordpress-site/
     └── wp-shim.php                         ← WordPress core mock
 ```
 
-## Deploying to InfinityFree
+## Deploying to AwardSpace
 
-See [DEPLOY.md](DEPLOY.md) for step-by-step instructions to host this on InfinityFree's free WordPress hosting.
+See [DEPLOY.md](DEPLOY.md) for step-by-step instructions to host this on AwardSpace's free WordPress hosting (PHP + MySQL + Zacky one-click installer).
 
 ## License
 
