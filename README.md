@@ -57,9 +57,9 @@ wordpress-site/
     └── wp-shim.php                         ← WordPress core mock
 ```
 
-## Deploying to AwardSpace
+## Deploying to Hostinger Premium
 
-See [DEPLOY.md](DEPLOY.md) for step-by-step instructions to host this on AwardSpace's free WordPress hosting (PHP + MySQL + Zacky one-click installer).
+See [DEPLOY.md](DEPLOY.md) for step-by-step instructions to host this on Hostinger Premium (~$2.99/mo) — full LAMP-stack WordPress with free domain, free SSL, LiteSpeed cache, and one-click installer.
 
 ## License
 
